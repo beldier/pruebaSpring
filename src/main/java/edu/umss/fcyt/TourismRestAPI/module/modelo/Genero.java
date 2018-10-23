@@ -8,13 +8,17 @@ import javax.persistence.Id;
 @Entity
 public class Genero {
     @Id
-    private Integer id_genero;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id_genero;
 
     private String nombre;
 
     public Genero(){}
-    public Genero(Integer id,String text){
+    public Genero(Long id,String text){
         this.id_genero = id;
+        this.nombre = text;
+    }
+    public Genero(String text){
         this.nombre = text;
     }
 
@@ -22,7 +26,11 @@ public class Genero {
         return nombre;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id_genero;
+    }
+
+    public void setNombre(String s){
+        nombre =s;
     }
 }
