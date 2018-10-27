@@ -16,7 +16,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class GeneroControlador {
     @Autowired
     private GeneroRepositorio generoRepositorio;
-
+    //@RequestMapping(method = GET,path = "/get")
     @GetMapping(path="/get")
     public Iterable<Genero> getGenero(){
 
